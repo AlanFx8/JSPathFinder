@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./src/css/index.css" />
+        <title>Pathfinder Project</title>
+    </head>
+    <body>
+        <div id="root">
+            <!-- THE HEADER -->
+            <header id="main-header">
+                <form id="header-form" name="header-form">
+                    <!-- First Row-->
+                    <section class="header-form-row">
+                        <!-- Toggle Grid Button-->
+                        <div class="header-option-element">
+                            <button
+                                id="toggle-nodes-button"
+                                type="button"
+                                class="header-btn"
+                            >
+                                Toggle Grid
+                            </button>
+                        </div>
+
+                        <!-- Remove Walls Button -->
+                        <div class="header-option-element">
+                            <button
+                                id = "remove-walls-button"
+                                type="button"
+                                class="header-btn"
+                            >
+                                Remove Walls
+                            </button>
+                        </div>
+
+                        <!-- Clear Checked-Nodes Button -->
+                        <div class="header-option-element">
+                            <button
+                                id = "clear-nodes-button"
+                                type="button"
+                                class="header-btn"
+                            >
+                                Clear Checked Nodes
+                            </button>
+                        </div>
+
+                        <!-- Animate Path Button -->
+                        <div class="header-option-element">
+                            <div class="label">
+                                Algorithm Type
+                            </div>
+
+                            <select
+                                id="algorithm-dropdown"
+                                name="algorithm-dropdown"                              
+                            >
+                                <option value="DIJKSTRA" >DIJKSTRA</option>
+                                <option value="A_STAR" >A_STAR</option>
+                            </select>
+
+                            <button
+                                id = "animate-path-button"
+                                type="button"
+                                class="header-btn"
+                            >
+                                Animate Path
+                            </button>
+                        </div>
+                    </section>
+
+                    <!-- Second Row-->
+                    <section class="header-form-row">
+                        <div class="header-option-element">
+                            <div class="label">
+                                Heuristic Type (AStar only)
+                            </div>
+                            <select
+                                id="heuristic-dropdown"
+                                name="heuristic-dropdown"
+                            >
+                                <option value= "RETURN_ONE" >Return 1</option>
+                                <option value= "MANHATTAN_DISTANCE" >Manhattan Distance</option>
+                                <option value= "EUCLIDEAN_DISTANCE" >Euclidean Distance</option>
+                            </select>
+                        </div>
+                    </section>
+                </form>
+            </header>
+    
+            <!-- MAIN CONTENT -->
+            <main id="main-content">
+                <!-- Content added via JavaScript-->
+                <noscript><p>Please enable JavaScript to load content...</p></noscript>
+            </main>
+        
+            <!-- THE FOOTER -->
+            <footer id="main-footer">
+                <p>This is the footer</p>
+            </footer>
+
+            <!-- THE BEE -->
+            <div id="bee" class="idle"></div>
+        </div>
+        <script src="./src/js/index.js" type="module"></script>
+    </body>
+</html>

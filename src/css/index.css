@@ -1,0 +1,145 @@
+/*
+@IMPORTS
+@HTML-BODY-ROOT
+@MAIN-HEADER-CONTENT-FOOTER
+@GRID-ROWDIVIDERS
+@HEADER-NAVBAR
+*/
+/*@IMPORTS*/
+@import url('./reset.css');
+@import url('./node.css');
+@import url('./bee.css');
+
+/*@HTML-BODY-ROOT*/
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+}
+
+#root {
+    display: grid;
+    grid-template-areas:
+    "header"
+    "content"
+    "footer";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    height: 100%;
+}
+
+/*@MAIN-HEADER-CONTENT-FOOTER*/
+#main-header {
+    grid-area: header;
+    background-color: #000000;
+    color: #ffffff;
+}
+
+#main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    background-color: #777777;
+    padding: 1rem;
+    grid-area: content;
+}
+
+#main-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #000000;
+    color: #ffffff;
+    border-top: solid 1px #ffffff;
+    border-bottom: solid 1px #ffffff;
+    height: 4em;
+    text-align: center;
+    grid-area: footer;
+}
+
+/*@GRID-ROWDIVIDERS*/
+#grid {
+    background-color: #ffffff;
+}
+
+.row-divider {
+    font-size: 0;
+}
+
+/*@HEADER-NAVBAR*/
+.header-form-row {
+    border-bottom: solid 1px #ffffff;
+    background-color: #000000;
+}
+
+/*Header-option-element*/
+.header-option-element {
+    display: inline-block;
+    border-right: solid 1px #ffffff;
+    padding: 1rem;
+}
+
+/*Label and Select*/
+.label {
+    display: inline-block;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 1.4rem;
+    margin: .5rem;
+}
+
+select {
+    display: inline-block;
+    width: 14rem;
+    text-align: center;
+    height: 2.4rem;
+}
+
+/*Header buttons*/
+.header-btn {
+    padding: .5rem;
+    width: 16rem;
+    font-weight: bold;
+}
+
+.header-btn:hover {
+    font-style: italic;
+}
+
+/*Style each button*/
+#toggle-nodes-button {
+    background-color: #5f1c9e;
+}
+
+#toggle-nodes-button:hover {
+    background-color: #9c4de6;
+}
+
+#remove-walls-button {
+    background-color: #00cc00;
+}
+
+#remove-walls-button:hover {
+    background-color: #63d663;
+}
+
+#clear-nodes-button {
+    background-color: #bb1f1f;
+}
+
+#clear-nodes-button:hover {
+    background-color: #fc6262;
+}
+
+#animate-path-button {
+    background-color: #adad00;
+    margin-left: .5rem;
+}
+
+#animate-path-button:hover {
+    background-color: #ffff1c;
+}

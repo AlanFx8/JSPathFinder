@@ -1,0 +1,167 @@
+/*THE STYLESHEET FOR NODES*/
+.node {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    background-image: url('../img/background.png');
+    position: relative;
+}
+
+.node:hover {
+    cursor: pointer;
+    opacity: .75;
+}
+
+/*obstacles*/
+.node.wall::after {
+    content: "";
+    display: block;
+    width: 16px;
+    height: 16px;
+    background-image: url('../img/obstacles.png');
+}
+
+.wall0::after {
+    background-position: 0 0;
+}
+
+.wall1::after {
+    background-position: 16px 0;
+}
+
+.wall2::after {
+    background-position: 32px 0;
+}
+
+.wall3::after {
+    background-position: 48px 0;
+}
+
+/*Start and Start-hover*/
+.node.start:hover {
+    opacity: 1;
+}
+
+.start::after {
+    content: "";
+    display: block;
+    width: 16px;
+    height: 16px;
+    background-image: url('../img/startnode-hover-background.png');
+}
+
+.start-hover::after {
+    content: "";
+    display: block;
+    width: 16px;
+    height: 16px;
+    background-image: url('../img/startnode-hover-background.png');
+}
+
+/*End and End-hover*/
+.node.end:hover {
+    opacity: 1;
+}
+
+.end::after {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-image: url('../img/endnode-background.png');
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    overflow: auto;
+    z-index: 1 !important;
+}
+
+.end-hover::after {
+    content: "";
+    display: block;
+    width: 16px;
+    height: 16px;
+    background-image: url('../img/endnode-hover-background.png');
+}
+
+/*Error - when start and end clash*/
+.error::after {
+    content: "";
+    display: block;
+    width: 16px;
+    height: 16px;
+    background-image: url('../img/error-background.png');
+}
+
+/*Visited and Shortest*/
+.visited::after {
+    content: "";
+    display: block;
+    width: 16px;
+    height: 16px;
+    background-color: #a80000;
+    border-radius: 100%;
+    opacity: .75;
+    position: absolute;
+    overflow: auto;
+    z-index: 1 !important;
+    transform: scale(.8);
+    animation-name: visitedAnimation;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: 1;
+}
+
+.shortest::after {
+    content: "";
+    display: block;
+    width: 16px;
+    height: 16px;
+    background-color: #d0ff00;
+    border-radius: 100%;
+    opacity: .75;
+    position: absolute;
+    overflow: auto;
+    z-index: 1 !important;
+    animation-name: shortestAnimation;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: 1;
+}
+
+/*grid overrides everything*/
+.node.grid {
+    border-right: solid 1px #444444;
+    border-bottom: solid 1px #444444;
+}
+
+/*ANIMATIONS8*/
+@keyframes visitedAnimation {
+    0% {
+        transform: scale(.25);
+    }
+  
+    50% {
+        transform: scale(1.5);
+    }
+  
+    100% {
+        transform: scale(.8);
+    }
+}
+
+@keyframes shortestAnimation {
+    0% {
+        transform: scale(.25);
+        background-color: #a80000;
+    }
+  
+    50% {
+        transform: scale(1.5);
+        background-color: #d0ff00;
+    }
+  
+    100% {
+        transform: scale(1);
+    }
+}

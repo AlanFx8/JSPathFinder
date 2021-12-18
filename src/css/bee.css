@@ -1,0 +1,98 @@
+#bee {
+    display: block;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    /*We need to hide the bee until the first setState draws the start node*/
+    top: -1000px;
+    left: -1000px;
+    z-index: 2 !important;
+    background-image: url('../img/startnode-background.png');
+    animation-duration: .25s;
+    animation-timing-function: steps(1, end);
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+
+    pointer-events: none;
+}
+
+#bee.idle {
+    animation-name: beeIdleAnim;
+}
+
+#bee.down {
+    animation-name: beeDownAnim;
+}
+
+#bee.up {
+    animation-name: beeUpAnim;
+}
+
+#bee.right {
+    animation-name: beeRightAnim;
+}
+
+#bee.left {
+    animation-name: beeLeftAnim;
+}
+
+/*ANIMATIONS*/
+@keyframes beeIdleAnim {
+    0% {
+        background-image: url('../img/bee-idle.png');
+        background-position: 0 0;
+    }
+  
+    50% {
+        background-image: url('../img/bee-idle.png');
+        background-position: 20px 0;
+    }
+}
+
+@keyframes beeDownAnim {
+    0% {
+        background-image: url('../img/bee-down.png');
+        background-position: 0 0;
+    }
+  
+    50% {
+        background-image: url('../img/bee-down.png');
+        background-position: 20px 0;
+    }
+}
+
+@keyframes beeUpAnim {
+    0% {
+        background-image: url('../img/bee-up.png');
+        background-position: 0 0;
+    }
+  
+    50% {
+        background-image: url('../img/bee-up.png');
+        background-position: 20px 0;
+    }
+}
+
+@keyframes beeLeftAnim {
+    0% {
+        background-image: url('../img/bee-left.png');
+        background-position: 0 0;
+    }
+  
+    50% {
+        background-image: url('../img/bee-left.png');
+        background-position: 20px 0;
+    }
+}
+
+@keyframes beeRightAnim {
+    0% {
+        background-image: url('../img/bee-right.png');
+        background-position: 0 0;
+    }
+  
+    50% {
+        background-image: url('../img/bee-right.png');
+        background-position: 20px 0;
+    }
+}
